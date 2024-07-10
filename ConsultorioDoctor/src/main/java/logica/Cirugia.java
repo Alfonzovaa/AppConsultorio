@@ -1,9 +1,12 @@
 package logica;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Cirugia extends Persona{
     
-    private int id_Cirugia;
-    private int idPaciente;
+//    private int id_Cirugia;
+    private int paciente;
     private String tipo; 
     private String fecha_ciru;
     private String hora_ciru;
@@ -11,29 +14,22 @@ public class Cirugia extends Persona{
     public Cirugia() {
     }
 
-    public Cirugia(int id_Cirugia, int idPaciente, String tipo, String fecha_ciru, String hora_ciru, String nombre, String apellido, String telefono, String direccion, String fecha_nac) {
+    public Cirugia(int idPaciente, String tipo, String fecha_ciru, String hora_ciru, String nombre, String apellido, String telefono, String direccion, String fecha_nac) {
         super(nombre, apellido, telefono, direccion, fecha_nac);
-        this.id_Cirugia = id_Cirugia;
-        this.idPaciente = idPaciente;
+        this.paciente = idPaciente;
         this.tipo = tipo;
         this.fecha_ciru = fecha_ciru;
         this.hora_ciru = hora_ciru;
     }
 
-    public int getId_Cirugia() {
-        return id_Cirugia;
-    }
-
-    public void setId_Cirugia(int id_Cirugia) {
-        this.id_Cirugia = id_Cirugia;
-    }
+    
 
     public int getIdPaciente() {
-        return idPaciente;
+        return paciente;
     }
 
     public void setIdPaciente(int idPaciente) {
-        this.idPaciente = idPaciente;
+        this.paciente = idPaciente;
     }
 
     public String getTipo() {
@@ -58,12 +54,6 @@ public class Cirugia extends Persona{
 
     public void setHora_ciru(String hora_ciru) {
         this.hora_ciru = hora_ciru;
-    }
-
-    
-    @Override
-    public String toString() {
-        return "Usuario{" + "id_Cirugia=" + id_Cirugia + ", idPaciente=" + idPaciente + ", tipo=" + tipo + ", fecha_ciru=" + fecha_ciru + ", hora_ciru=" + hora_ciru + '}';
     }
     
 }

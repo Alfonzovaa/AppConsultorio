@@ -1,8 +1,11 @@
 package logica;
 
+import javax.persistence.Entity;
+
+@Entity 
 public class Paciente extends Persona{
     
-    private int id_paciente;
+//    private int id_paciente;
     private String tiene_OS;
     private String tipo_sangre;
     private String problema;
@@ -12,23 +15,16 @@ public class Paciente extends Persona{
     public Paciente() {
     }
 
-    public Paciente(int id_paciente, String tiene_OS, String tipo_sangre, String problema, String fecha_cita, String requiereCirugia, String nombre, String apellido, String telefono, String direccion, String fecha_nac) {
+    public Paciente(String tiene_OS, String tipo_sangre, String problema, String fecha_cita, String requiereCirugia, String nombre, String apellido, String telefono, String direccion, String fecha_nac) {
         super(nombre, apellido, telefono, direccion, fecha_nac);
-        this.id_paciente = id_paciente;
         this.tiene_OS = tiene_OS;
         this.tipo_sangre = tipo_sangre;
         this.problema = problema;
         this.fecha_cita = fecha_cita;
         this.requiereCirugia = requiereCirugia;
     }
-
-    public int getId_paciente() {
-        return id_paciente;
-    }
-
-    public void setId_paciente(int id_paciente) {
-        this.id_paciente = id_paciente;
-    }
+    
+    
 
     public String getTiene_OS() {
         return tiene_OS;
