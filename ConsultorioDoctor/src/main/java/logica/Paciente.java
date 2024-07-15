@@ -1,9 +1,10 @@
 package logica;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 
 @Entity 
-public class Paciente extends Persona{
+public class Paciente extends Persona implements Serializable{
     
 //    private int id_paciente;
     private String tiene_OS;
@@ -15,14 +16,16 @@ public class Paciente extends Persona{
     public Paciente() {
     }
 
-    public Paciente(String tiene_OS, String tipo_sangre, String problema, String fecha_cita, String requiereCirugia, String nombre, String apellido, String telefono, String direccion, String fecha_nac) {
-        super(nombre, apellido, telefono, direccion, fecha_nac);
+    public Paciente(String tiene_OS, String tipo_sangre, String problema, String fecha_cita, String requiereCirugia, int id, String nombre, String apellido, String telefono, String direccion, String fecha_nac) {
+        super(id, nombre, apellido, telefono, direccion, fecha_nac);
         this.tiene_OS = tiene_OS;
         this.tipo_sangre = tipo_sangre;
         this.problema = problema;
         this.fecha_cita = fecha_cita;
         this.requiereCirugia = requiereCirugia;
     }
+
+    
     
     
 
