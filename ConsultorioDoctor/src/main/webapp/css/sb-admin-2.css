@@ -6452,7 +6452,7 @@ a.bg-dark:focus,a.bg-dark:hover,button.bg-dark:focus,button.bg-dark:hover {
 }
 
 .bg-white {
-    background-color: #fff!important
+    background-color: #000000;
 }
 
 .bg-transparent {
@@ -10171,7 +10171,7 @@ a:focus {
 }
 
 .text-gray-800 {
-    color: #000000!important;
+    color: #000000!important
 }
 
 .text-gray-900 {
