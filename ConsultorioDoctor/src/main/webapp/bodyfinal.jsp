@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer bg-white" style="width: 1216px;">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Consultorio exclusivo 2024</span>

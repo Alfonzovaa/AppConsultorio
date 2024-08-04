@@ -2,11 +2,16 @@ package logica;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-public class Cirugia extends Persona implements Serializable{
+public class Cirugia implements Serializable{
     
-//    private int id_Cirugia;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id_Cirugia;
     private int paciente;
     private String tipo; 
     private String fecha_ciru;
@@ -15,20 +20,28 @@ public class Cirugia extends Persona implements Serializable{
     public Cirugia() {
     }
 
-    public Cirugia(int paciente, String tipo, String fecha_ciru, String hora_ciru, int id, String nombre, String apellido, String telefono, String direccion, String fecha_nac) {
-        super(id, nombre, apellido, telefono, direccion, fecha_nac);
+    public Cirugia(int id_Cirugia, int paciente, String tipo, String fecha_ciru, String hora_ciru) {
+        this.id_Cirugia = id_Cirugia;
         this.paciente = paciente;
         this.tipo = tipo;
         this.fecha_ciru = fecha_ciru;
         this.hora_ciru = hora_ciru;
     }
 
-    public int getIdPaciente() {
+    public int getId_Cirugia() {
+        return id_Cirugia;
+    }
+
+    public void setId_Cirugia(int id_Cirugia) {
+        this.id_Cirugia = id_Cirugia;
+    }
+
+    public int getPaciente() {
         return paciente;
     }
 
-    public void setIdPaciente(int idPaciente) {
-        this.paciente = idPaciente;
+    public void setPaciente(int paciente) {
+        this.paciente = paciente;
     }
 
     public String getTipo() {
@@ -54,5 +67,4 @@ public class Cirugia extends Persona implements Serializable{
     public void setHora_ciru(String hora_ciru) {
         this.hora_ciru = hora_ciru;
     }
-    
 }

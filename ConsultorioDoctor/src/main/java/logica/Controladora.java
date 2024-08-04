@@ -6,10 +6,43 @@ public class Controladora {
     
     ControladoraPersistencia controlPersis = new ControladoraPersistencia();
 
-    public void crearUsuario(int id, String nombreUsuario, String contrasenia,String rol){
+    public void crearUsuario(String nombreUsuario, String contrasenia,String rol){
         
-        Usuario usu = new Usuario(id,nombreUsuario,contrasenia,rol);
+        Usuario usu = new Usuario();
+        usu.setNombreUsuario(nombreUsuario);
+        usu.setContrasenia(contrasenia);
+        usu.setRol(rol);
+        
         controlPersis.crearUsuario(usu);
     }
     
+    public void crearPaciente(String cedula, String nombre, String apellido, String telefono,String direccion, String fecha_nac,String tiene_OS, String tipo_sangre, String condicion, String fecha_cita, String requiereCirugia){
+        
+        Paciente pac = new Paciente();
+        pac.setCedula(cedula);
+        pac.setNombre(nombre);
+        pac.setApellido(apellido);
+        pac.setTelefono(telefono);
+        pac.setDireccion(direccion);
+        pac.setFecha_nac(fecha_nac);
+        pac.setTiene_OS(tiene_OS);
+        pac.setTipo_sangre(tipo_sangre);
+        pac.setCondicion(condicion);
+        pac.setFecha_cita(fecha_cita);
+        pac.setRequiereCirugia(requiereCirugia);
+        
+        
+        controlPersis.crearPaciente(pac);
+    }
+    
+    public void crearCirugia(int id, int idPac, String tipo, String fecha_ciru, String hora_ciru){
+        
+        Cirugia ciru = new Cirugia();
+        ciru.setPaciente(idPac);
+        ciru.setTipo(tipo);
+        ciru.setFecha_ciru(fecha_ciru);
+        ciru.setHora_ciru(hora_ciru);
+        
+        controlPersis.crearCirugia(ciru);
+    }   
 }

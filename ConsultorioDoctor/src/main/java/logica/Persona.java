@@ -14,6 +14,8 @@ public class Persona implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
+    private String cedula;
     private String nombre;
     private String apellido;
     private String telefono;
@@ -23,8 +25,9 @@ public class Persona implements Serializable {
     public Persona() {
     }
 
-    public Persona(int id, String nombre, String apellido, String telefono, String direccion, String fecha_nac) {
+    public Persona(int id, String cedula, String nombre, String apellido, String telefono, String direccion, String fecha_nac) {
         this.id = id;
+        this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -38,6 +41,14 @@ public class Persona implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
     public String getNombre() {
@@ -80,6 +91,4 @@ public class Persona implements Serializable {
         this.fecha_nac = fecha_nac;
     }
 
-    
-    
 }

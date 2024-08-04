@@ -2,6 +2,7 @@ package logica;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.metamodel.SingularAttribute;
 
 @Entity 
 public class Paciente extends Persona implements Serializable{
@@ -9,25 +10,21 @@ public class Paciente extends Persona implements Serializable{
 //    private int id_paciente;
     private String tiene_OS;
     private String tipo_sangre;
-    private String problema;
+    private String condicion;
     private String fecha_cita;
     private String requiereCirugia;
 
     public Paciente() {
     }
 
-    public Paciente(String tiene_OS, String tipo_sangre, String problema, String fecha_cita, String requiereCirugia, int id, String nombre, String apellido, String telefono, String direccion, String fecha_nac) {
-        super(id, nombre, apellido, telefono, direccion, fecha_nac);
+    public Paciente(String tiene_OS, String tipo_sangre, String condicion, String fecha_cita, String requiereCirugia, int id, String cedula, String nombre, String apellido, String telefono, String direccion, String fecha_nac) {
+        super(id, cedula, nombre, apellido, telefono, direccion, fecha_nac);
         this.tiene_OS = tiene_OS;
         this.tipo_sangre = tipo_sangre;
-        this.problema = problema;
+        this.condicion = condicion;
         this.fecha_cita = fecha_cita;
         this.requiereCirugia = requiereCirugia;
-    }
-
-    
-    
-    
+    }    
 
     public String getTiene_OS() {
         return tiene_OS;
@@ -45,12 +42,12 @@ public class Paciente extends Persona implements Serializable{
         this.tipo_sangre = tipo_sangre;
     }
 
-    public String getProblema() {
-        return problema;
+    public String getCondicion() {
+        return condicion;
     }
 
-    public void setProblema(String problema) {
-        this.problema = problema;
+    public void setCondicion(String condicion) {
+        this.condicion = condicion;
     }
 
     public String getFecha_cita() {
@@ -68,4 +65,6 @@ public class Paciente extends Persona implements Serializable{
     public void setRequiereCirugia(String requiereCirugia) {
         this.requiereCirugia = requiereCirugia;
     }
+    
+    
 }

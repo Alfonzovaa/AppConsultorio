@@ -59,7 +59,7 @@ public class CirugiaJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                int id = cirugia.getId();
+                int id = cirugia.getId_Cirugia();
                 if (findCirugia(id) == null) {
                     throw new NonexistentEntityException("The cirugia with id " + id + " no longer exists.");
                 }
@@ -80,7 +80,7 @@ public class CirugiaJpaController implements Serializable {
             Cirugia cirugia;
             try {
                 cirugia = em.getReference(Cirugia.class, id);
-                cirugia.getId();
+                cirugia.getId_Cirugia();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The cirugia with id " + id + " no longer exists.", enfe);
             }
