@@ -1,5 +1,7 @@
 package logica;
 
+import java.util.ArrayList;
+import java.util.List;
 import persistencia.ControladoraPersistencia;
 
 public class Controladora {
@@ -35,7 +37,7 @@ public class Controladora {
         controlPersis.crearPaciente(pac);
     }
     
-    public void crearCirugia(int id, int idPac, String tipo, String fecha_ciru, String hora_ciru){
+    public void crearCirugia(int idPac, String tipo, String fecha_ciru, String hora_ciru){
         
         Cirugia ciru = new Cirugia();
         ciru.setPaciente(idPac);
@@ -45,4 +47,18 @@ public class Controladora {
         
         controlPersis.crearCirugia(ciru);
     }   
+
+    public List<Usuario> getUsuarios() {
+        
+        return controlPersis.getUsuarios();
+        
+    }
+
+    public List<Cirugia> getCirugias() {
+        return controlPersis.getCirugias();
+    }
+
+    public List<Paciente> getPacientes() {
+        return controlPersis.getPacientes();
+    }
 }

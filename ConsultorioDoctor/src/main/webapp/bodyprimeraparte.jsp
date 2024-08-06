@@ -43,7 +43,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="">Ver Pacientes</a>
+                        <a class="collapse-item" href="SvPacientes">Ver Pacientes</a>
                         <a class="collapse-item" href="altaPacientes.jsp">Agregar pacientes</a>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="">Ver cirugías</a>
+                        <a class="collapse-item" href="SvCirugias">Ver cirugías</a>
                         <a class="collapse-item" href="altaCirugias.jsp">Agregar cirugías</a>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="">Ver usuarios</a>
+                        <a class="collapse-item" href="SvUsuarios">Ver usuarios</a>
                         <a class="collapse-item" href="altaUsuarios.jsp">Agregar usuarios</a>
                     </div>
                 </div>

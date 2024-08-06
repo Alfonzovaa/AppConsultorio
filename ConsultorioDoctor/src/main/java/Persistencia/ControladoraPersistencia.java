@@ -1,5 +1,7 @@
 package persistencia;
 
+import java.util.ArrayList;
+import java.util.List;
 import logica.Cirugia;
 import logica.Paciente;
 import logica.Usuario;
@@ -24,5 +26,17 @@ public class ControladoraPersistencia {
 
     public void crearCirugia(Cirugia ciru) {
         ciruJPA.create(ciru);
+    }
+
+    public List<Usuario> getUsuarios() {
+        return usuJPA.findUsuarioEntities();
+    }
+
+    public List<Cirugia> getCirugias() {
+        return ciruJPA.findCirugiaEntities();
+    }
+
+    public List<Paciente> getPacientes() {
+        return pacJPA.findPacienteEntities();
     }
 }
