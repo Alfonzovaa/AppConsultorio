@@ -54,7 +54,7 @@ public class SvCirugias extends HttpServlet {
                 
                 control.crearCirugia(paciente, tipo, fecha_ciru, hora_ciru);
         
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("SvCirugias");
 
     }
 

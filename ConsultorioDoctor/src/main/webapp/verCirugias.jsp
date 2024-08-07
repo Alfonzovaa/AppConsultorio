@@ -23,6 +23,8 @@
                                             <th>Tipo</th>
                                             <th>Fecha cirugía</th>
                                             <th>Hora cirugía</th>
+                                            <th style="width: 210px">Opciones</th>
+
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -31,6 +33,8 @@
                                             <th>Tipo</th>
                                             <th>Fecha cirugía</th>
                                             <th>Hora cirugía</th>
+                                            <th style="width: 210px">Opciones</th>
+
                                         </tr>
                                     </tfoot>
                                     <%
@@ -43,6 +47,20 @@
                                             <td><%= ciru.getTipo()%></td>
                                             <td><%= ciru.getFecha_ciru()%></td>
                                             <td><%= ciru.getHora_ciru()%></td>
+                                            <td style="display: flex; width: 230px;">
+                                                <form name="eliminar" action="SvElimCirugias" method="POST">
+                                                    <button type="submit" class = "btn btn-primary btn-user btn-block" style="background-color: black; margin-right: 5px;">
+                                                        <i class="fas fa-trash-alt"></i> Eliminar    
+                                                    </button>
+                                                    <input type="hidden" name="id" value="<%=ciru.getId_Cirugia()%>">
+                                                </form>
+                                                <form name="editar" action="SvEditCirugias" method="POST">
+                                                    <button type="submit" class = "btn btn-primary btn-user btn-block" style="background-color: black; margin-left: 5px;">
+                                                        <i class="fas fa-pencil-alt"></i> editar    
+                                                    </button>
+                                                    <input type="hidden" name="id" value="<%=ciru.getId_Cirugia()%>">
+                                                </form>
+                                            </td>
                                         </tr>
                                         <%}%>
                                     </tbody>

@@ -61,4 +61,16 @@ public class Controladora {
     public List<Paciente> getPacientes() {
         return controlPersis.getPacientes();
     }
+
+    public void borrarUsuario(int id) {
+        controlPersis.borrarUsuario(id);
+    }
+
+    public void borrarCirugia(int id) {
+        controlPersis.borrarCirugia(id);
+    }
+
+    public void borrarPaciente(int id) {
+        controlPersis.borrarPaciente(id);
+    }
 }

@@ -36,9 +36,6 @@ public class SvPacientes extends HttpServlet {
         HttpSession misession = request.getSession();
         misession.setAttribute("listaPacientes", listaPacientes);
         
-        System.out.println("Paciente " + listaPacientes.get(0));
-
-        
         response.sendRedirect("verPacientes.jsp");
     }
 
@@ -60,7 +57,7 @@ public class SvPacientes extends HttpServlet {
                 
                 control.crearPaciente(cedula, nombre, apellido, telefono, direccion, fecha_nac, tiene_OS, tipo_sangre, condicion, fecha_cita, requiereCirugia);
         
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("SvPacientes");
         
     }
 

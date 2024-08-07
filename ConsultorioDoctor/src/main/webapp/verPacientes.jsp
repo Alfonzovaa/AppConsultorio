@@ -32,6 +32,7 @@
                                             <th>Condición</th>                
                                             <th>FechaCita</th>
                                             <th>RequiereCirugía</th>
+                                            <th style="width: 210px">Opciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -48,6 +49,7 @@
                                             <th>Condición</th>                
                                             <th>FechaCita</th>
                                             <th>RequiereCirugía</th>
+                                            <th style="width: 210px">Opciones</th>
                                         </tr>
                                     </tfoot>
                                     <%
@@ -68,6 +70,20 @@
                                             <td><%= pac.getCondicion()%></td>
                                             <td><%= pac.getFecha_cita()%></td>
                                             <td><%= pac.getRequiereCirugia()%></td>
+                                            <td style="display: flex; width: 230px;">
+                                                <form name="eliminar" action="SvElimPacientes" method="POST">
+                                                    <button type="submit" class = "btn btn-primary btn-user btn-block" style="background-color: black; margin-right: 5px;">
+                                                        <i class="fas fa-trash-alt"></i> Eliminar    
+                                                    </button>
+                                                    <input type="hidden" name="id" value="<%=pac.getId()%>">
+                                                </form>
+                                                <form name="editar" action="SvEditPacientes" method="POST">
+                                                    <button type="submit" class = "btn btn-primary btn-user btn-block" style="background-color: black; margin-left: 5px;">
+                                                        <i class="fas fa-pencil-alt"></i> editar    
+                                                    </button>
+                                                    <input type="hidden" name="id" value="<%=pac.getId()%>">
+                                                </form>
+                                            </td>
                                         </tr>
                                         <%}%>
                                     </tbody>

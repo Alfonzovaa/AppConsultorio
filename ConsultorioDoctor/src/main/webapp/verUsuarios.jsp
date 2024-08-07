@@ -22,6 +22,7 @@
                                             <th>Id</th>
                                             <th>Nombre de usuario</th>
                                             <th>Rol</th>
+                                            <th style="width: 210px">Opciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -29,6 +30,7 @@
                                             <th>Id</th>
                                             <th>Nombre de usuario</th>
                                             <th>Rol</th>
+                                            <th style="width: 210px">Opciones</th>
                                         </tr>
                                     </tfoot>                                       
                                     <%
@@ -40,6 +42,21 @@
                                             <td><%= usu.getIdUsuario()%></td>
                                             <td><%= usu.getNombreUsuario()%></td>
                                             <td><%= usu.getRol()%></td>
+                                            <td style="display: flex; width: 230px;">
+                                                <form name="eliminar" action="SvElimUsuarios" method="POST">
+                                                    <button type="submit" class = "btn btn-primary btn-user btn-block" style="background-color: black; margin-right: 15px;">
+                                                        <i class="fas fa-trash-alt"></i> Eliminar    
+                                                    </button>
+                                                    <input type="hidden" name="id" value="<%=usu.getIdUsuario()%>">
+
+                                                </form>
+                                                <form name="editar" action="SvEditUsuarios" method="POST">
+                                                    <button type="submit" class = "btn btn-primary btn-user btn-block" style="background-color: black; margin-left: 13px;">
+                                                        <i class="fas fa-pencil-alt"></i> editar    
+                                                    </button>
+                                                    <input type="hidden" name="id" value="<%=usu.getIdUsuario()%>">
+                                                </form>
+                                            </td>    
                                         </tr>
                                     <%}%>    
                                     </tbody>
