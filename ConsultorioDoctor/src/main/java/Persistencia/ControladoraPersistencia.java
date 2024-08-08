@@ -66,4 +66,40 @@ public class ControladoraPersistencia {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public Usuario traerUsuario(int id) {
+        return usuJPA.findUsuario(id);
+    }
+
+    public Cirugia traerCirugia(int id) {
+        return ciruJPA.findCirugia(id);
+    }
+
+    public Paciente traerPaciente(int id) {
+        return pacJPA.findPaciente(id);
+    }
+
+    public void editarUsuario(Usuario usu) {
+        try {
+            usuJPA.edit(usu);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void editarCirugia(Cirugia ciru) {
+        try {
+            ciruJPA.edit(ciru);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void editarPaciente(Paciente pac) {
+        try {
+            pacJPA.edit(pac);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

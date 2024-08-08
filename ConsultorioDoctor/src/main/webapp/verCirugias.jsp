@@ -54,7 +54,7 @@
                                                     </button>
                                                     <input type="hidden" name="id" value="<%=ciru.getId_Cirugia()%>">
                                                 </form>
-                                                <form name="editar" action="SvEditCirugias" method="POST">
+                                                <form name="editar" action="SvEditCirugias" method="GET">
                                                     <button type="submit" class = "btn btn-primary btn-user btn-block" style="background-color: black; margin-left: 5px;">
                                                         <i class="fas fa-pencil-alt"></i> editar    
                                                     </button>

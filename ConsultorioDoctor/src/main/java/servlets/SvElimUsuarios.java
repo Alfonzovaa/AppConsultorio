@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package servlets;
 
 import java.io.IOException;
@@ -13,10 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import logica.Controladora;
 
-/**
- *
- * @author Alfonzovaa
- */
 @WebServlet(name = "SvElimUsuarios", urlPatterns = {"/SvElimUsuarios"})
 public class SvElimUsuarios extends HttpServlet {
     

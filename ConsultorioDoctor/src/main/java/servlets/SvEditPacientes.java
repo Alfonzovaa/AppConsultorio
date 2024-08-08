@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package servlets;
 
 import java.io.IOException;
@@ -11,74 +7,69 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import logica.Controladora;
+import logica.Paciente;
 
-/**
- *
- * @author Alfonzovaa
- */
 @WebServlet(name = "SvEditPacientes", urlPatterns = {"/SvEditPacientes"})
 public class SvEditPacientes extends HttpServlet {
+    
+    Controladora control = new Controladora();
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SvEditPacientes</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SvEditPacientes at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+      
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        int id = Integer.parseInt(request.getParameter("id"));
+                
+                Paciente pac = control.traerPaciente(id);
+                
+                HttpSession misession = request.getSession();
+                misession.setAttribute("pacEditar", pac);
+                System.out.println("El nombre del paciente es: " + pac.getNombre());
+                response.sendRedirect("editarPacientes.jsp");
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        String cedula = request.getParameter("cedula");
+        String nombre = request.getParameter("nombre");
+        String apellido = request.getParameter("apellido");
+        String telefono = request.getParameter("telefono");
+        String direccion = request.getParameter("direccion");
+        String fecha_nac = request.getParameter("fecha_nac");
+        String tiene_OS = request.getParameter("tiene_OS");
+        String tipoSangre = request.getParameter("tipoSangre");
+        String condicion = request.getParameter("condicion");
+        String fecha_cita = request.getParameter("fecha_cita");
+        String requiereCirugia = request.getParameter("requiereCirugia");
+        
+        Paciente pac = (Paciente) request.getSession().getAttribute("pacEditar");
+        pac.setCedula(cedula);
+        pac.setNombre(nombre);
+        pac.setApellido(apellido);
+        pac.setTelefono(telefono);
+        pac.setDireccion(direccion);
+        pac.setFecha_nac(fecha_nac);
+        pac.setTiene_OS(tiene_OS);
+        pac.setTipo_sangre(tipoSangre);
+        pac.setCondicion(condicion);
+        pac.setFecha_cita(fecha_cita);
+        pac.setRequiereCirugia(requiereCirugia);
+        
+        control.editarPaciente(pac);
+        
+        response.sendRedirect("SvPacientes");
+
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";

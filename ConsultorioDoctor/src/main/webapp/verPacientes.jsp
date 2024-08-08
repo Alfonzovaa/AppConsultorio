@@ -77,7 +77,7 @@
                                                     </button>
                                                     <input type="hidden" name="id" value="<%=pac.getId()%>">
                                                 </form>
-                                                <form name="editar" action="SvEditPacientes" method="POST">
+                                                <form name="editar" action="SvEditPacientes" method="GET">
                                                     <button type="submit" class = "btn btn-primary btn-user btn-block" style="background-color: black; margin-left: 5px;">
                                                         <i class="fas fa-pencil-alt"></i> editar    
                                                     </button>

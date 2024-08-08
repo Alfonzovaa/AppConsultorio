@@ -73,4 +73,28 @@ public class Controladora {
     public void borrarPaciente(int id) {
         controlPersis.borrarPaciente(id);
     }
+
+    public Usuario traerUsuario(int id) {
+        return controlPersis.traerUsuario(id);
+    }
+
+    public Cirugia traerCirugia(int id) {
+        return controlPersis.traerCirugia(id);
+    }
+
+    public Paciente traerPaciente(int id) {
+        return controlPersis.traerPaciente(id);
+    }
+
+    public void editarUsuario(Usuario usu) {
+        controlPersis.editarUsuario(usu);
+    }
+
+    public void editarCirugia(Cirugia ciru) {
+        controlPersis.editarCirugia(ciru);
+    }
+
+    public void editarPaciente(Paciente pac) {
+        controlPersis.editarPaciente(pac);
+    }
 }
