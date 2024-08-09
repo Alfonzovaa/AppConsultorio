@@ -97,4 +97,23 @@ public class Controladora {
     public void editarPaciente(Paciente pac) {
         controlPersis.editarPaciente(pac);
     }
+
+    public boolean comprobarIngreso(String usuario, String contrasenia) {
+        
+        boolean ingreso = false;
+        
+        List<Usuario> listaUsuarios = new ArrayList<>();
+        listaUsuarios = controlPersis.getUsuarios();
+        
+        for(Usuario usu : listaUsuarios){
+            if(usu.getNombreUsuario().equals(usuario)){
+                if(usu.getContrasenia().equals(contrasenia)){
+                    ingreso = true;
+                }else{
+                    ingreso= false;
+                }
+            }
+        }
+        return ingreso;
+    }
 }
